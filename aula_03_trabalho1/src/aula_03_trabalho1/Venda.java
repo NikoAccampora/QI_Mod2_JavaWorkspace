@@ -6,6 +6,6 @@ public class Venda {
 	public Produto product;
 	public LocalDate saleDate;
 	public Cliente client;
-	public double profit;
+	public Double profit; //Tentei usar 'Float' mas deu erro no Main :\
 	public Transportadora courier;
 }

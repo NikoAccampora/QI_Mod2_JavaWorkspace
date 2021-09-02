@@ -34,7 +34,7 @@ public class Main {
 		//product1
 		product1.name = "Xiaomi Redmi9C";
 		product1.type = "Electronics";
-		product1.price = 1183.49;
+		product1.price = 1183.49; //Tentei usar 'float' mas deu erro :\
 		product1.expirationDate = LocalDate.of(2059, 12, 31);
 		product1.vendor = vendor1;
 		
