@@ -4,8 +4,9 @@ import java.time.LocalDate;
 
 public class Vendedor {
 	public String fullName;
-	public String clients;
+	public Cliente clients;
 	public LocalDate hireDate;
-	public String department;
-    
+	public Estoque inventory;
+    public Fornecedor supplier;
+    public Transportadora courier;
 }
