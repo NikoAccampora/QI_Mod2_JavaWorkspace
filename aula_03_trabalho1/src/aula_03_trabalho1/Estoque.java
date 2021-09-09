@@ -37,5 +37,5 @@ public void setVendor(Vendedor vendor) {
 public void setQuantity(int quantity) {
 	this.quantity = quantity;
 }
-//Não se muda o tipo de estoque ou fornecedor
+//Não se muda o tipo de estoque ou fornecedor.
 }

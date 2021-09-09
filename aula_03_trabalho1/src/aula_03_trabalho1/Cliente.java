@@ -8,7 +8,7 @@ public class Cliente {
 
 	public Cliente(String name, String country) {
 		   this.name = name; 
-		   this.country = country;  //Requer país de localização em caso de exportações
+		   this.country = country;  //Requer país de localização em caso de exportações.
 	   }
 //GETTERS
 public String getName() {
@@ -33,7 +33,7 @@ public void setGender(String gender) {
 }
 
 public void setCountry(String country) {
-	this.country = country;  //A pessoa pode viajar
+	this.country = country;  //A pessoa pode viajar.
 }
 
 }

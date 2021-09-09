@@ -17,4 +17,23 @@ public class Fornecedor {
 		   this.courier = courier;
 		   //A transportadora se torna opcional.
 	}
+	
+	//GETTERS
+	public String getName() {
+		return name;
+	}
+	
+	public String getCountry() {
+		return country;
+	}
+	
+	public Transportadora getCourier() {
+		return courier;
+	}
+	
+	//SETTERS
+	public void setCourier(Transportadora courier) {
+		this.courier = courier;
+	}
+	//Caso queiram utilizar uma transportadora diferente.
 }
