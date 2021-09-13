@@ -46,7 +46,7 @@ public class Main {
 		
 		//vendor1
 		vendor1.setClients(client1);
-		vendor1.getHireDate();
+		vendor1.setHireDate(LocalDate.of(1998,3,16));
 		vendor1.setSupplier(supplier1);
 		vendor1.setCourier(courier1);
 	}

@@ -66,5 +66,9 @@ public class Vendedor {
   	public void setCourier(Transportadora courier) {
   		this.courier = courier;
   	}
+  	
+  	public void setHireDate(LocalDate hireDate) {
+  		this.hireDate = hireDate;
+  	}
     
 }
