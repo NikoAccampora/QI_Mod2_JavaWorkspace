@@ -31,7 +31,10 @@ public class Main {
 		inv1.setVendor(vendor1);
 		
 		//supplier1
-		supplier1.setCourier(courier1);
+	    supplier1.setCourier(courier1);
+	    
+	    //supplier2
+	    supplier2.setCourier(courier1);
 		
 		//product1
 		product1.setPrice(1183.49); //Tentei usar 'float' mas deu erro :\
@@ -53,7 +56,9 @@ public class Main {
 ////--------===Aula 10 - Trabalho toString===--------	
 //(Baseado em aula_02_hospital)
 		
-		System.out.println(vendor1.toString());
+    System.out.println(inv1.toString());
+
+//SÓ FUNCIONOU COM 'Cliente'; NAS OUTRAS CLASSES DÁ ERRO DE EXECUÇÃO :(
 	}
 
 }

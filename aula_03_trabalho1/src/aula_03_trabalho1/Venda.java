@@ -1,6 +1,7 @@
 package aula_03_trabalho1;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Venda {
 	private Produto product;
@@ -21,6 +22,7 @@ public class Venda {
 		   this.profit = profit; 
 		   this.client = client; 
 	}
+	
     
 	//GETTERS
 	public Produto getProduct() {
@@ -50,5 +52,19 @@ public class Venda {
 	
 	public void setProfit(Double profit) {
 		this.profit = profit;
+	}
+	
+////--------===Aula 10 - Trabalho toString===--------	
+	private String formatarData(LocalDate data) {
+		  if(data != null) {
+			var formato = DateTimeFormatter.ofPattern("dd/MM/YYYY");
+			return formato.format(data);
+		}
+	    return "<!DATA INDISPONIVEL!>";	  
+	}
+	
+	@Override
+	    public String toString() {
+		return String.format("Produto: %s\nVendido(a) em: %t\nCliente: %s\nLucro: %f\nTransportadora: %s",this.product.toString(),this.formatarData(this.saleDate),this.client.toString(),this.profit.toString(),this.courier.toString());
 	}
 }

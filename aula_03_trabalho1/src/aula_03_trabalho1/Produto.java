@@ -60,13 +60,12 @@ public class Produto {
 				var formato = DateTimeFormatter.ofPattern("dd/MM/YYYY");
 				return formato.format(data);
 			}
-		    return "Data Não informada!!!";	  
+		    return "<!DATA INDISPONIVEL!>";	  
 		}
 		
 		@Override
 		public String toString() {
-			return String.format("Nome: %s\nTipo: %s\n Preço: %f\nVálido até: %t\nVendedor: %s", 
-			this.name,this.type,this.price.toString(),this.formatarData(this.expirationDate),this.vendor.toString());
+			return String.format("Nome: %s\nTipo: %s\n Preço: %f\nVálido até: %t\nVendedor: %s",this.name,this.type,this.price.toString(),this.formatarData(this.expirationDate),this.vendor.toString());
 		}
 }
 

@@ -1,7 +1,5 @@
 package aula_03_trabalho1;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Transportadora {
 	private String name;
@@ -19,6 +17,7 @@ public class Transportadora {
 		   this.country = country; 
 		   //País é opcional.
 	}
+	
 	
 	        //GETTERS
 			public String getName() {
@@ -49,7 +48,6 @@ public class Transportadora {
 ////--------===Aula 10 - Trabalho toString===--------	
            	@Override
 			public String toString() {
-				return String.format("Nome: %s\nEstoque: %s\nPaís: %s\nFornecedor: %s", 
-				this.name,this.inventory.toString(),this.country,this.supplier.toString());
+				return String.format("Nome: %s\nEstoque: %s\nPaís: %s\nFornecedor: %s",this.name,this.inventory.toString(),this.country,this.supplier.toString());
 			}
 }

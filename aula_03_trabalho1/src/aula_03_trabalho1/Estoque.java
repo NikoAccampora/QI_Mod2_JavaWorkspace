@@ -12,6 +12,7 @@ public Estoque(Fornecedor supplier, String type) {
 	   this.type = type;
 	   //Creio que esses sejam os dados mais importantes.
 }
+
 //GETTERS
 public String getType() {
 	return type;
@@ -42,7 +43,6 @@ public void setQuantity(int quantity) {
 ////--------===Aula 10 - Trabalho toString===--------	
 @Override
 public String toString() {
-	return String.format("Tipo de mercadoria: %s\nQuantidade: %d\nVendedor designado: %s\nFornecedor: %s", 
-	this.type,this.quantity,this.vendor.toString(),this.supplier.toString());
+	return String.format("Tipo de mercadoria: %s\nQuantidade: %d\nVendedor designado: %s\nFornecedor: %s",this.type,this.quantity,this.vendor.toString(),this.supplier.toString());
 }
 }
