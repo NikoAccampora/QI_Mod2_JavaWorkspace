@@ -64,4 +64,12 @@ public class Endereco {
     public void setCEP(String cep) {
     	this.cep = cep; 
     }
+    
+    
+////--------===Aula 10 - Exemplo metodo toString===--------
+    @Override
+    public String toString() {
+    	return String.format("Logradouro: %s nº %s, bairro %s - %s/%s", this.rua,this.numero,this.bairro,this.cidade,this.estado);
+    	//Veja o resultado na main.
+    }
 }

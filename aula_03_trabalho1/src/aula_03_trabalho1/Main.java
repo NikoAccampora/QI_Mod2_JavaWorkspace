@@ -49,6 +49,11 @@ public class Main {
 		vendor1.setHireDate(LocalDate.of(1998,3,16));
 		vendor1.setSupplier(supplier1);
 		vendor1.setCourier(courier1);
+	
+////--------===Aula 10 - Trabalho toString===--------	
+//(Baseado em aula_02_hospital)
+		
+		System.out.println(vendor1.toString());
 	}
 
 }

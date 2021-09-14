@@ -36,4 +36,10 @@ public class Fornecedor {
 		this.courier = courier;
 	}
 	//Caso queiram utilizar uma transportadora diferente.
+////--------===Aula 10 - Trabalho toString===--------	
+@Override
+public String toString() {
+	return String.format("Nome: %s\nPaís: %s\nTransportadora: %s", 
+	this.name,this.country,this.courier.toString());
+}
 }

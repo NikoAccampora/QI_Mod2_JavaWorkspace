@@ -1,6 +1,7 @@
 package aula_03_trabalho1;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Produto {
 	private String name;
@@ -52,6 +53,21 @@ public class Produto {
 			this.price = price;
 		}
 		//Só isso que pode mudar, né?
+		
+	////--------===Aula 10 - Trabalho toString===--------	
+		private String formatarData(LocalDate data) {
+			  if(data != null) {
+				var formato = DateTimeFormatter.ofPattern("dd/MM/YYYY");
+				return formato.format(data);
+			}
+		    return "Data Não informada!!!";	  
+		}
+		
+		@Override
+		public String toString() {
+			return String.format("Nome: %s\nTipo: %s\n Preço: %f\nVálido até: %t\nVendedor: %s", 
+			this.name,this.type,this.price.toString(),this.formatarData(this.expirationDate),this.vendor.toString());
+		}
 }
 
    

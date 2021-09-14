@@ -37,6 +37,10 @@ public class Paciente {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	
+////--------===Aula 10 - Exemplo metodo toString===--------
+	@Override
+	public String toString() {
+		return String.format("Nome completo: %s\tTelefone: %s\tEndereco: %s",this.nomeCompleto,this.telefone,this.endereco.toString());
+	}
 	
 }

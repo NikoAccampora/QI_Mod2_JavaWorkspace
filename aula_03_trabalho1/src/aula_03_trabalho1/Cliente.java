@@ -36,4 +36,10 @@ public void setCountry(String country) {
 	this.country = country;  //A pessoa pode viajar.
 }
 
+////--------===Aula 10 - Trabalho toString===--------
+@Override
+public String toString() {
+	return String.format("Nome: %s\nSexo: %s\nE-Mail: %s\nPaís de residecia: %s", this.name,this.gender,this.email,this.country);
+}
+
 }

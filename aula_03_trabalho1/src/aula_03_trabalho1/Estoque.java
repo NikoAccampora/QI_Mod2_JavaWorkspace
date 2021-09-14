@@ -38,4 +38,11 @@ public void setQuantity(int quantity) {
 	this.quantity = quantity;
 }
 //Não se muda o tipo de estoque ou fornecedor.
+
+////--------===Aula 10 - Trabalho toString===--------	
+@Override
+public String toString() {
+	return String.format("Tipo de mercadoria: %s\nQuantidade: %d\nVendedor designado: %s\nFornecedor: %s", 
+	this.type,this.quantity,this.vendor.toString(),this.supplier.toString());
+}
 }
