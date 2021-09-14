@@ -65,7 +65,7 @@ public class Produto {
 		
 		@Override
 		public String toString() {
-			return String.format("Nome: %s\nTipo: %s\n Preço: %f\nVálido até: %t\nVendedor: %s",this.name,this.type,this.price.toString(),this.formatarData(this.expirationDate),this.vendor.toString());
+			return String.format("Name: %s\nType: %s\nPrice: %sR$\nExpires at: %s\nVendor: %s",this.name,this.type,this.price.toString(),this.formatarData(this.expirationDate),this.vendor.getFullName().toString());
 		}
 }
 

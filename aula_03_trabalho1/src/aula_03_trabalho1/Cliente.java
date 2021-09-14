@@ -39,7 +39,7 @@ public void setCountry(String country) {
 ////--------===Aula 10 - Trabalho toString===--------
 @Override
 public String toString() {
-	return String.format("Nome: %s\nSexo: %s\nE-Mail: %s\nPaís de residecia: %s", this.name,this.gender,this.email,this.country);
+	return String.format("Name: %s\nSex: %s\nE-Mail: %s\nCountry of residence: %s", this.name,this.gender,this.email,this.country);
 }
 
 }

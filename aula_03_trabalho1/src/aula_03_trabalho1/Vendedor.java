@@ -84,7 +84,7 @@ public class Vendedor {
 	
 	@Override
 	    public String toString() {
-		return String.format("Nome Completo: %s\nCliente: %s\nContratado(a) em: %t\nEstoque: %s\nFornecedor: %s\nTransportadora: %s",this.fullName,this.clients.toString(),this.formatarData(this.hireDate),this.inventory.toString(),this.supplier.toString(),this.courier.toString());
+		return String.format("Full name: %s\nClient: %s\nHired at: %s\nInventory: %s\nSupplier: %s\nCourier: %s",this.fullName,this.clients.getName().toString(),this.formatarData(this.hireDate),this.inventory.getType().toString(),this.supplier.getName().toString(),this.courier.getName().toString());
 	}
     
 }

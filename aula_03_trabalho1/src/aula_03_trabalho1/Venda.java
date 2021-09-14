@@ -65,6 +65,6 @@ public class Venda {
 	
 	@Override
 	    public String toString() {
-		return String.format("Produto: %s\nVendido(a) em: %t\nCliente: %s\nLucro: %f\nTransportadora: %s",this.product.toString(),this.formatarData(this.saleDate),this.client.toString(),this.profit.toString(),this.courier.toString());
+		return String.format("Product: %s\nSold at: %s\nClient: %s\nProfit: %sR$\nCourier: %s",this.product.getName().toString(),this.formatarData(this.saleDate),this.client.getName().toString(),this.profit.toString(),this.courier.getName().toString());
 	}
 }

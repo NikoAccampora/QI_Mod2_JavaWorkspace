@@ -48,6 +48,6 @@ public class Transportadora {
 ////--------===Aula 10 - Trabalho toString===--------	
            	@Override
 			public String toString() {
-				return String.format("Nome: %s\nEstoque: %s\nPaís: %s\nFornecedor: %s",this.name,this.inventory.toString(),this.country,this.supplier.toString());
+				return String.format("Name: %s\nInventory type: %s\nCountry: %s\nSupplier: %s",this.name,this.inventory.getType().toString(),this.country,this.supplier.getName().toString());
 			}
 }

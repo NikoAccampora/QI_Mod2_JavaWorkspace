@@ -43,6 +43,6 @@ public void setQuantity(int quantity) {
 ////--------===Aula 10 - Trabalho toString===--------	
 @Override
 public String toString() {
-	return String.format("Tipo de mercadoria: %s\nQuantidade: %d\nVendedor designado: %s\nFornecedor: %s",this.type,this.quantity,this.vendor.toString(),this.supplier.toString());
+	return String.format("Inventory type: %s\nQuantity: %s\nDesignated vendor: %s\nSupplier: %s",this.type,this.quantity,this.vendor.getFullName().toString(),this.supplier.getName().toString());
 }
 }

@@ -56,9 +56,20 @@ public class Main {
 ////--------===Aula 10 - Trabalho toString===--------	
 //(Baseado em aula_02_hospital)
 		
-    System.out.println(inv1.toString());
-
-//SÓ FUNCIONOU COM 'Cliente'; NAS OUTRAS CLASSES DÁ ERRO DE EXECUÇÃO :(
+    System.out.println("-----------===CLIENT #1===-----------");
+	System.out.println(client1.toString());
+	System.out.println("-----------===INVENTORY #1===-----------");
+	System.out.println(inv1.toString());
+	System.out.println("-----------===SUPPLIER #1===-----------");
+	System.out.println(supplier1.toString());
+	System.out.println("-----------===PRODUCT #1===-----------");
+	System.out.println(product1.toString());
+	System.out.println("-----------===COURIER #1===-----------");
+	System.out.println(courier1.toString());
+	System.out.println("-----------===SALE #1===-----------");
+	System.out.println(sale1.toString());
+	System.out.println("-----------===VENDOR #1===-----------");
+	System.out.println(vendor1.toString());
 	}
 
 }
