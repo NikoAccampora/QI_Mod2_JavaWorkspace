@@ -29,42 +29,47 @@ public class Main {
 
 		System.out.println("Digite um ano:");
 		int leapYearCheck = typeMe.nextInt();
-		
+			
 		if((leapYearCheck % 4 == 0)&&(leapYearCheck % 100 != 0)) {
-			System.out.printf("O ano %s é bissexto.",leapYearCheck);
-		} else if((leapYearCheck % 4 != 0)&&(leapYearCheck % 400 != 0)) {
-			System.out.printf("O ano %s não é bissexto.",leapYearCheck);
-		} else if((leapYearCheck % 4 != 0)&&(leapYearCheck % 400 == 0)) {
-			System.out.printf("O ano %s é bissexto.",leapYearCheck);
+		System.out.printf("O ano %s é bissexto.",leapYearCheck);
+		} else if((leapYearCheck % 4 == 0)&&(leapYearCheck % 100 == 0)&&(leapYearCheck % 400 == 0)) {
+	    System.out.printf("O ano %s é bissexto.",leapYearCheck);
 		} else System.out.printf("O ano %s não é bissexto.",leapYearCheck);
 	
 
 //////EXERCÍCIO 3 - ASSASSINATO
 		
-		System.out.println("Responda as perguntas com 0(não) ou 1(sim).");
+		int answerCount = 0;
+		
+		System.out.println("Responda as perguntas com 's' ou 'n' (sim ou não)");
 		System.out.println("Telefonou para a vítima?");
-		int q1 = typeMe.nextInt();
+		String q1 = typeMe.next();
+		if(q1.equalsIgnoreCase("s")) {answerCount++;}
 		
 		System.out.println("Esteve no local do crime?");
-		int q2 = typeMe.nextInt();
+		String q2 = typeMe.next();
+		if(q2.equalsIgnoreCase("s")) {answerCount++;}
 		
 		System.out.println("Mora perto da vítima?");
-		int q3 = typeMe.nextInt();
+		String q3 = typeMe.next();
+		if(q3.equalsIgnoreCase("s")) {answerCount++;}
 		
 		System.out.println("Devia para a vítima?");
-		int q4 = typeMe.nextInt();
+		String q4 = typeMe.next();
+		if(q4.equalsIgnoreCase("s")) {answerCount++;}
 		
 		System.out.println("Já trabalhou com a vítima?");
-		int q5 = typeMe.nextInt();
+		String q5 = typeMe.next();
+		if(q5.equalsIgnoreCase("s")) {answerCount++;}
 		
-		if(q1+q2+q3+q4+q5==5) {
-			System.out.println("Você é o Assassino!!!");
-		} else if ((q1+q2+q3+q4+q5==4)||(q1+q2+q3+q4+q5==3)) {
-			System.out.println("Você é um cúmplice.");
-		} else if ((q1+q2+q3+q4+q5==2)||(q1+q2+q3+q4+q5==1)) {
-			System.out.println("Você é suspeito.");
-		} else System.out.println("Você é inocente.");
-	    
+		
+		if(answerCount==5) {
+		System.out.println("Você é o Assassino!!!");
+	} else if ((answerCount<5)&&(answerCount>2)) {
+		System.out.println("Você é um cúmplice.");
+	} else if (answerCount==2) {
+		System.out.println("Você é suspeito.");
+	} else System.out.println("Você é inocente.");
 		
 	
 //////EXERCÍCIO 4 - ÁLCOOL E GASOLINA
