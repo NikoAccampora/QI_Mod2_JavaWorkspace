@@ -98,14 +98,14 @@ public class Main {
 		else if (fill_decide.equalsIgnoreCase("g")) {
 	    
 			System.out.println("Faça seu pedido de Gasolina (em litros):");
-			float g_req = typeMe.nextFloat();
+			float fill_amount = typeMe.nextFloat();
 			
-			if (g_req>20) {
-			     float checkout = (float)((g_price*g_req)*0.94); 
+			if (fill_amount>20) {
+			     float checkout = (float)((g_price*fill_amount)*0.94); 
 			     System.out.printf("Valor a pagar em Gasolina: %.2fR$\n",checkout);
 			     System.out.println("(Você teve 6% de desconto)");
 			} else {
-				 float checkout = (float)((g_price*g_req)*0.96); 
+				 float checkout = (float)((g_price*fill_amount)*0.96); 
 				 System.out.printf("Valor a pagar em Gasolina: %.2fR$\n",checkout);
 				 System.out.println("(Você teve 4% de desconto)");
 			}
