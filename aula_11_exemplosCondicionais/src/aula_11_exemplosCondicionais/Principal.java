@@ -1,54 +1,94 @@
 package aula_11_exemplosCondicionais;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Principal {
 
 	public static void main(String[] args) {
-        Random rand = new Random();
-		int valor1 = rand.nextInt(4);
-        int valor2 = rand.nextInt(4);
-        int valor3 = rand.nextInt(4);
-        int valor4 = rand.nextInt(4);
+         Scanner teclado = new Scanner(System.in);
         
-        boolean comp1 = valor1 == valor2;
-        boolean comp2 = valor3 == valor4;
+        System.out.println("Digite o primeiro número:");
+        float num1 = teclado.nextFloat();
+        System.out.println("Digite o segundo número:");
+        float num2 = teclado.nextFloat();
         
-        boolean comp3 = valor3 > valor2;
-        boolean comp4 = valor4 <= valor1;
+        float maior = maiorNumero(num1,num2);
         
-//        System.out.printf("É verdade que valor 1 é igual ao valor 2: %b\n",comp1);
-//        
-//        System.out.printf("É verdade que valor 3 é igual ao valor 4: %b\n",comp2);
-//        
-//        System.out.printf("É verdade que valor 3 é maior que valor 2: %b\n",comp3);
-          
-        boolean logico1 = comp1 || comp4;  
-        boolean logico2 = comp3 && comp2; 
-        
-//        System.out.printf("O logico 1 é verdadeiro: %b\n",logico1);
-//        System.out.printf("O logico 2 é verdadeiro: %b\n",logico2);
-        
-        boolean souAlunoQI = true;
-        boolean estouMatriculadoNaAssis = true;
-        boolean estouMatriculadoNaNoite = false;
-        boolean estouMatriculadoNaTurmaDoMelhorProfessorDaQI = false;
-        
-        // Posso usar o PC da escola?
-        if(souAlunoQI) {
-        	System.out.println("Pode usar o PC da escola.");
+        if(maior == 0) {
+        	System.out.println("Os números são iguais!!!");
         } else {
-        	System.out.println("NÃO pode usar o PC da escola!");
+        	System.out.printf("O maior número é o %.1f; ", maior);
         }
         
-        // Posso participar da aula de Web III
-        if((estouMatriculadoNaAssis && estouMatriculadoNaNoite) || estouMatriculadoNaTurmaDoMelhorProfessorDaQI) {
-        	System.out.println("Você pode assistir a aula de Web III!!!");
+        boolean num1Positivo = ePositivo(num1);
+        boolean num2Positivo = ePositivo(num2);
+        
+//  ////      System.out.printf("O primeiro número é positivo? -> %b! ", num1Positivo);
+//  ////      System.out.printf("O segundo número é positivo? -> %b!", num2Positivo);
+//        
+        if(num1Positivo) {
+        	System.out.println("O primeiro número é positivo; ");
         } else {
-        	System.out.println("Você NÃO pode assistir a aula de Web III!!!");
+        	System.out.println("O primeiro número é negativo; ");
+        } 
+        if(num2Positivo) {
+        	System.out.println("O segundo número é positivo.");
+        } else {
+        	System.out.println("O segundo número é negativo.");
+        }
+    
+        
+        System.out.println("Digite uma letra:");
+        String letra = teclado.next();
+        
+        boolean eVogal = eVogal(letra);
+        
+        if(eVogal) {
+        	System.out.printf("A %s é uma vogal.",letra);
+        } else {
+        	System.out.printf("A %s NÃO é uma vogal!", letra);
+        }
+
+         System.out.println("Digite o seu sexo('M' ou 'F')");
+         String sexo = teclado.next();
+         
+         String resultado = verificarSexo(sexo);
+         System.out.printf("Seu sexo é %s\n",resultado);
         }
 	
+	private static float maiorNumero(float num1, float num2) {
+		// Primeiro if
+		if(num1==num2) {
+			return 0;
+		}
+		// 'else' é opcional.
+		// Segundo if
+		if(num1>num2) {
+		 return num1;
+	}
+	return num2;
+  }
+	
+	private static boolean ePositivo(float num) {
+		return num > -1;
 	}
 	
+	private static boolean eVogal(String letra) {
+		return letra.equalsIgnoreCase("a") || letra.equalsIgnoreCase("e") || letra.equalsIgnoreCase("i") || letra.equalsIgnoreCase("o") || letra.equalsIgnoreCase("u");
+	}
+
+	private static String verificarSexo(String sexo) {
+		if(sexo.equalsIgnoreCase("M")) {
+		  return "Masculino";	
+		} else if(sexo.equalsIgnoreCase("F")) {
+			return "Feminino";	
+		} else {
+			return "Sexo inválido!";	
+		}
+	}
+
+
 }
+	
 
