@@ -7,6 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		listaDeGerentes exec_listaDeGerentes = new listaDeGerentes();
 		listaDeClientes exec_listaDeClientes = new listaDeClientes();
+		listaDeContas exec_listaDeContas = new listaDeContas();
 		
 		Gerente paulo = new Gerente("paulo");
 		Gerente marcio = new Gerente("marcio");
@@ -44,6 +45,22 @@ public class Main {
 		exec_listaDeClientes.removeClientes("mike");
      	
 		exec_listaDeClientes.printClientes();
+		
+		//------------------------------------------
+		
+     	
+     	exec_listaDeContas.addContas(001);
+		exec_listaDeContas.addContas(002);
+		exec_listaDeContas.addContas(003);
+		exec_listaDeContas.addContas(004);
+		exec_listaDeContas.addContas(005);
+		
+		exec_listaDeContas.printContas();
+		
+		exec_listaDeContas.removeContas(3);
+		exec_listaDeContas.removeContas(1);
+     	
+		exec_listaDeContas.printContas();
 
 	}
 
