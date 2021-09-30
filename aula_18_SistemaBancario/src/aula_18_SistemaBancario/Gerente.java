@@ -5,19 +5,26 @@ import java.util.ArrayList;
 public class Gerente {
 
 	private String nome;
+	private String telefone;//!!
 	
-	public Gerente(String nome) {
+	Gerente(String nome, String telefone) {
+		this.nome = nome;
+		this.telefone = telefone;//!!
+	}
+	
+	Gerente(String nome) {
 		this.nome = nome;
 	}
 	
 	public String getNome() {
-		return nome;
+		return this.nome;
+	}
+	
+	public String getTelefone() {
+		return this.telefone;
 	}
 
-	@Override
-	public String toString() {
-		return String.format("%s",this.nome);
-	}
+	
 	
 	
 }

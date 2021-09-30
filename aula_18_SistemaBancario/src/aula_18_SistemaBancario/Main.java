@@ -9,22 +9,28 @@ public class Main {
 		listaDeClientes exec_listaDeClientes = new listaDeClientes();
 		listaDeContas exec_listaDeContas = new listaDeContas();
 		
-		Gerente paulo = new Gerente("paulo");
-		Gerente marcio = new Gerente("marcio");
-		Gerente otis = new Gerente("otis");
-		Gerente barney = new Gerente("barney");
+		Gerente paulo = new Gerente("paulo","1111");
+		Gerente maria = new Gerente("maria","2222");
 		
-		
+		// Adicinar na lista
 		exec_listaDeGerentes.addGerentes(paulo);
-		exec_listaDeGerentes.addGerentes(marcio);
-		exec_listaDeGerentes.addGerentes(otis);
-		exec_listaDeGerentes.addGerentes(barney);
+		exec_listaDeGerentes.addGerentes(maria);
 		
-		exec_listaDeGerentes.printGerentes();
+		// Listar elementos
+		System.out.println(exec_listaDeGerentes.listar());
 		
-     	exec_listaDeGerentes.removeGerentes("marcio");
+     	// Modificar maria
+		Gerente novaMaria = new Gerente("Maria","3333"); //Só edita o telefone(?) o nome deve ser o mesmo...
      	
-     	exec_listaDeGerentes.printGerentes();
+		exec_listaDeGerentes.editar(novaMaria);
+		
+		System.out.println(exec_listaDeGerentes.listar());
+		
+		// Remoção
+//		exec_listaDeGerentes.removeGerentes(novaMaria); //TANTO FAZ!!
+		exec_listaDeGerentes.removeGerentes(maria);
+		
+		System.out.println(exec_listaDeGerentes.listar());
      	
      	//-----------------------
      	
