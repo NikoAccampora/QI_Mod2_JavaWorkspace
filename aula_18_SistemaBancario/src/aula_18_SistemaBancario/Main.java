@@ -34,23 +34,28 @@ public class Main {
      	
      	//-----------------------
      	
-     	Cliente andrei = new Cliente("andrei");
-     	Cliente bobby = new Cliente("bobby");
-     	Cliente timmy = new Cliente("timmy");
-     	Cliente mike = new Cliente("mike");
-     	Cliente anders = new Cliente("anders");
-     	
-     	exec_listaDeClientes.addClientes(andrei);
-		exec_listaDeClientes.addClientes(bobby);
-		exec_listaDeClientes.addClientes(timmy);
-		exec_listaDeClientes.addClientes(mike);
-		exec_listaDeClientes.addClientes(anders);
+		Cliente marcio = new Cliente("marcio","marcio@gmail.com");
+		Cliente ana = new Cliente("ana","ana@gmail.com");
 		
-		exec_listaDeClientes.printClientes();
+		// Adicinar na lista
+		exec_listaDeClientes.addClientes(marcio);
+		exec_listaDeClientes.addClientes(ana);
 		
-		exec_listaDeClientes.removeClientes("mike");
+		// Listar elementos
+		System.out.println(exec_listaDeClientes.listar());
+		
+     	// Modificar ana
+		Cliente novaAna = new Cliente("Ana","ana@hotmail.com"); //Só edita o email(?) o nome deve ser o mesmo...
      	
-		exec_listaDeClientes.printClientes();
+		exec_listaDeClientes.editar(novaAna);
+		
+		System.out.println(exec_listaDeClientes.listar());
+		
+		// Remoção
+//		exec_listaDeClientes.removeClientes(novaAna); //TANTO FAZ!!
+		exec_listaDeClientes.removeClientes(ana);
+		
+		System.out.println(exec_listaDeClientes.listar());
 		
 		//------------------------------------------
 		

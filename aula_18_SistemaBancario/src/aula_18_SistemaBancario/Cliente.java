@@ -4,19 +4,27 @@ import java.util.ArrayList;
 
 public class Cliente {
 
-private String nome;
+	private String nome;
+	private String email;//!!
 	
-	public Cliente(String nome) {
+	Cliente(String nome, String email) {
+		this.nome = nome;
+		this.email = email;//!!
+	}
+	
+	Cliente(String nome) {
 		this.nome = nome;
 	}
 	
 	public String getNome() {
-		return nome;
+		return this.nome;
+	}
+	
+	public String getEmail() {
+		return this.email;
 	}
 
-	@Override
-	public String toString() {
-		return String.format("%s",this.nome);
-	}
-
+	
+	
+	
 }
