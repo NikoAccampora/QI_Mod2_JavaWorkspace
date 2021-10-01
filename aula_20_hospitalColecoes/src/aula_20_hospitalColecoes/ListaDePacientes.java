@@ -15,12 +15,12 @@ private ArrayList<Paciente> ListPacientes = new ArrayList<Paciente>();
 	}
 	
 	public void removePacientes(Paciente obj_paciente) {	
-		ListPacientes.removeIf((list_thing)->list_thing.getNome().equalsIgnoreCase(obj_paciente.getNome()));
+		ListPacientes.removeIf((list_thing)->list_thing.getCPF().equals(obj_paciente.getCPF()));
 	}
 	
 	public Paciente buscar(Paciente obj_paciente) {
 		for(Paciente list_thing : ListPacientes) {
-			if(list_thing.getNome().equalsIgnoreCase(obj_paciente.getNome())) {
+			if(list_thing.getCPF().equals(obj_paciente.getCPF())) {
 				return list_thing;
 			}
 		}
@@ -36,11 +36,11 @@ private ArrayList<Paciente> ListPacientes = new ArrayList<Paciente>();
 	}
 	
 	public String listar(){
-	    StringBuilder builder = new StringBuilder();
+	    StringBuilder myBuilder = new StringBuilder();
 	    for(Paciente obj_paciente : this.ListPacientes) {
-	    	builder.append(obj_paciente.toString());
+	    	myBuilder.append(obj_paciente.toString());
 	    }
-		return builder.toString();
+		return myBuilder.toString();
 	} 
 
 }

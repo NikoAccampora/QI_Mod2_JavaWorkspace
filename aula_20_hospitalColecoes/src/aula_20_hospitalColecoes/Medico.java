@@ -8,10 +8,11 @@ public class Medico {
 	private Endereco endereco;
 	
 	
-	Medico(String nome, String telefone, String crm) {
+	Medico(String nome, String telefone, String crm, Endereco endereco) {
 		this.nome = nome;
 		this.telefone = telefone;
 		this.crm = crm;
+		this.endereco = endereco;
 	}
 	
 	Medico(String nome) {
@@ -36,7 +37,7 @@ public class Medico {
 	
 	@Override
 	public String toString() {
-		return String.format("Médico: %s\nTelefone: %s\nCRM: %s\nEndereço: %s\n\n", this.nome, this.telefone, this.crm, this.endereco.getRua());
+		return String.format("Médico: %s\nTelefone: %s\nCRM: %s\nEndereço: %s - %s\n\n", this.nome, this.telefone, this.crm, this.endereco.getRua(), this.endereco.getNumero());
 	}
 
 }
