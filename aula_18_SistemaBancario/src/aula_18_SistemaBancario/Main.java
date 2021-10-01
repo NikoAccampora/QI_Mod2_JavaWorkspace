@@ -5,9 +5,10 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
+		listaDeContas exec_listaDeContas = new listaDeContas();
 		listaDeGerentes exec_listaDeGerentes = new listaDeGerentes();
 		listaDeClientes exec_listaDeClientes = new listaDeClientes();
-		listaDeContas exec_listaDeContas = new listaDeContas();
+		//------------------------------------------------------------
 		
 		Gerente paulo = new Gerente("paulo","1111");
 		Gerente maria = new Gerente("maria","2222");
@@ -27,13 +28,13 @@ public class Main {
 		System.out.println(exec_listaDeGerentes.listar());
 		
 		// Remoção
-//		exec_listaDeGerentes.removeGerentes(novaMaria); //TANTO FAZ!!
+      //exec_listaDeGerentes.removeGerentes(novaMaria); //TANTO FAZ!!
 		exec_listaDeGerentes.removeGerentes(maria);
 		
 		System.out.println(exec_listaDeGerentes.listar());
-     	
-     	//-----------------------
-     	
+		
+////--------------------------=CLIENTES=-----------------------------		
+		
 		Cliente marcio = new Cliente("marcio","marcio@gmail.com");
 		Cliente ana = new Cliente("ana","ana@gmail.com");
 		
@@ -52,27 +53,28 @@ public class Main {
 		System.out.println(exec_listaDeClientes.listar());
 		
 		// Remoção
-//		exec_listaDeClientes.removeClientes(novaAna); //TANTO FAZ!!
+      //exec_listaDeClientes.removeClientes(novaAna); //TANTO FAZ!!
 		exec_listaDeClientes.removeClientes(ana);
 		
 		System.out.println(exec_listaDeClientes.listar());
 		
-		//------------------------------------------
+////---------------------=CONTAS=-----------------------------
 		
-     	
-     	exec_listaDeContas.addContas(001);
-		exec_listaDeContas.addContas(002);
-		exec_listaDeContas.addContas(003);
-		exec_listaDeContas.addContas(004);
-		exec_listaDeContas.addContas(005);
+	    Conta conta1 = new Conta(1,200);
+		Conta conta2 = new Conta(2,1000);
 		
-		exec_listaDeContas.printContas();
+		Conta contaEditada = new Conta(1,500);
 		
-		exec_listaDeContas.removeContas(3);
-		exec_listaDeContas.removeContas(1);
-     	
-		exec_listaDeContas.printContas();
-
+		exec_listaDeContas.addContas(conta1);
+		exec_listaDeContas.addContas(conta2);
+		
+		System.out.println(exec_listaDeContas.listar());
+		
+		exec_listaDeContas.editar(contaEditada);
+		
+		System.out.println(exec_listaDeContas.listar());
+		
+		
 	}
 
 }

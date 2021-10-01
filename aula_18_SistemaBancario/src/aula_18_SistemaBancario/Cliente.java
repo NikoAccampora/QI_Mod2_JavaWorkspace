@@ -5,26 +5,28 @@ import java.util.ArrayList;
 public class Cliente {
 
 	private String nome;
-	private String email;//!!
+	private String cpf;//!!
 	
-	Cliente(String nome, String email) {
+	Cliente(String nome, String cpf) {
 		this.nome = nome;
-		this.email = email;//!!
+		this.cpf = cpf;//!!
 	}
 	
-	Cliente(String nome) {
-		this.nome = nome;
+	Cliente(String cpf) {
+		this.nome = cpf;
 	}
 	
 	public String getNome() {
 		return this.nome;
 	}
 	
-	public String getEmail() {
-		return this.email;
+	public String getCpf() {
+		return this.cpf;
 	}
 
-	
-	
+	@Override
+	public String toString() {
+		return String.format("Nome do cliente: %s\nCPF do cliente: %s\n\n", this.nome, this.cpf);
+	}
 	
 }

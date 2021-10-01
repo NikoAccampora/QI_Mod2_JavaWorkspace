@@ -8,18 +8,18 @@ public class listaDeClientes {
 	
 	  
 	public void addClientes(Cliente cliente) {
-		//	if(cliente != null) {
+		 	if(cliente != null) {
 			ListClientes.add(cliente);
-		//	}
+		 	}
 		}
 		
 		public void removeClientes(Cliente cliente) {	
-			ListClientes.removeIf((meuElemento)->meuElemento.getNome().equalsIgnoreCase(cliente.getNome()));
+			ListClientes.removeIf((meuElemento)->meuElemento.getCpf().equals(cliente.getCpf()));
 		}
 		
 		public Cliente buscar(Cliente cliente) {
-			for(Cliente elemento : ListClientes) {
-				if(elemento.getNome().equalsIgnoreCase(cliente.getNome())) {
+			for(Cliente elemento : this.ListClientes) {
+				if(elemento.getCpf().equals(cliente.getCpf())) {
 					return elemento;
 				}
 			}
@@ -36,8 +36,8 @@ public class listaDeClientes {
 		
 		public String listar(){
 		    StringBuilder builder = new StringBuilder();
-		    for(Cliente cliente : this.ListClientes) {
-		    	builder.append("Nome: "+cliente.getNome()+" - Email: "+cliente.getEmail()+"\n");
+		    for(Cliente cliente : this.ListClientes) {//: = Para cada elemento nessa lista, guarda nessa variável (temporário pra esse método)
+		    	builder.append(cliente.toString());
 		    }
 			return builder.toString();
 		} 
