@@ -16,38 +16,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.nikoaccampora.model.Character;
-import br.com.nikoaccampora.service.CharService;
+import br.com.nikoaccampora.model.RobotMaster;
+import br.com.nikoaccampora.service.RobotService;
 
 @RestController
-@RequestMapping("/character")
-public class CharController    {
+@RequestMapping("/robotMaster")
+public class RobotController    {
     
 	@Autowired
-	private CharService charService;
+	private RobotService robotService;
 	
 	@GetMapping
-	public List<Character> findAll(){
-		return charService.findAll();
+	public List<RobotMaster> findAll(){
+		return robotService.findAll();
 	}
     
     @GetMapping("/{name}")
-    public Character findOne(@PathVariable String name) {
-       return charService.findOne(name);
+    public RobotMaster findOne(@PathVariable String name) {
+       return robotService.findOne(name);
     }
   
   @PostMapping
-  public Map<String, String> insert(@RequestBody Character character){
-	 return charService.insert(character);
+  public Map<String, String> insert(@RequestBody RobotMaster robotMaster){
+	 return robotService.insert(robotMaster);
     }
   
   @PutMapping
-  public Map<String,String> edit(@RequestBody Character character){
-	  return charService.edit(character);
+  public Map<String,String> edit(@RequestBody RobotMaster robotMaster){
+	  return robotService.edit(robotMaster);
   }
   
   @DeleteMapping("/{name}")
   public Map<String,String> remove(@PathVariable String name){
-	  return charService.remove(name);
+	  return robotService.remove(name);
    }
 }

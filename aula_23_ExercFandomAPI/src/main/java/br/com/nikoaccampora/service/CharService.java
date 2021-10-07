@@ -6,8 +6,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import br.com.nikoaccampora.model.Character;
+import br.com.nikoaccampora.model.Character.Type;
 
 @Service
 public class CharService {
@@ -16,13 +19,11 @@ public class CharService {
 	    
 	    
 	    CharService(){
-	    	Character megaman;
-			CharacterList.add(
-	    	      megaman = new Character("Mega Man","Robot",MM1)		
+	    	CharacterList.add(
+	    	         new Character("Mega Man",Type.Robot,"Mega Man")		
 	    	);
-			Character drlight;
-			CharacterList.add(
-	   	         drlight = new Character("Dr. Light","Human",MM1)			
+	    	CharacterList.add(
+	   	         	 new Character("Dr. Light",Type.Human,"Mega Man")			
 	    	);
 	    }
 	    
@@ -30,49 +31,51 @@ public class CharService {
 		 return this.CharacterList;
 	 }
 	 
-	 public Character findOne(Character character) {
-		 for(Character obj_character : CharacterList) {
-	    	   if((character.toString()).equalsIgnoreCase(character.toString())) {
-	    		   return obj_character;
+	 public Character findOne(String name) {
+		 for(Character character : CharacterList) {
+	    	   if(character.name.equalsIgnoreCase(name)) {
+	    		   return character;
 	    	   }
 	       }
 	    return null;
 	 }
 	 
-	 public Map<String, String> insert(Character obj_character){
+	 public Map<String, String> insert(Character character){
 		 Map<String, String> result = new HashMap<String, String>();
-		  boolean isSuccess = CharacterList.add(obj_character);
+		  boolean isSuccess = CharacterList.add(character);
 		  if(isSuccess) {
-			  result.put("result", "Character added succuesfully!");
+			  result.put("result", "Character added successfully!");
 		  }else {
-			  result.put("result", "ERROR!! Character couldn't be added!");
+			  result.put("result", "ERROR!!! Could not be added!");
 		  }
 		  return result;	
 	 }	 
 	 
-	 public Map<String,String> edit(Character obj_character){
+	 public Map<String,String> edit(Character character){
 		  Map<String,String> result = new HashMap<String, String>();
 		  
 		  for(Character element : CharacterList) {
-	   	   if(element.name.equalsIgnoreCase(obj_character.name)) {
+	   	   if(element.name.equalsIgnoreCase(character.name)) {
 	   		   int index = CharacterList.indexOf(element);
-	   		   CharacterList.set(index, obj_character);
-	   		   result.put("result","Edit successful!");
+	   		   CharacterList.set(index, character);
+	   		   result.put("result", "Edit successful!");
 	   		   return result;
 	   	  }   
 	   	}
-		  result.put("result", "ERROR!! Could not edit!");
+		  result.put("result", "ERROR!!! Could not edit!");
 		  return result;
 
 	 }
 	 
-	 public Map<String,String> remove(Character character){
+	 public Map<String,String> remove(String name){
 		  Map<String,String> result = new HashMap<String, String>();
-		  boolean isSuccess = CharacterList.removeIf((element)->element.equals(character));
+		  boolean isSuccess = CharacterList.removeIf(
+				  (character)->character.name.equalsIgnoreCase(name)
+		  );
 		  if(isSuccess) {
-			  result.put("result", "Remove Successfully!");
+			  result.put("result", "Character removed.");
 		  } else {
-			  result.put("result", "ERROR: Could not be removed!");
+			  result.put("result", "ERROR!!! Could not remove!");
 		  }
 		  return result;
 	   }

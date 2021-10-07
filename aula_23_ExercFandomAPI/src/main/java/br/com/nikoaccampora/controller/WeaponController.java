@@ -16,38 +16,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.nikoaccampora.model.Character;
-import br.com.nikoaccampora.service.CharService;
+import br.com.nikoaccampora.model.Weapon;
+import br.com.nikoaccampora.service.WeaponService;
 
 @RestController
-@RequestMapping("/character")
-public class CharController    {
+@RequestMapping("/weapon")
+public class WeaponController    {
     
 	@Autowired
-	private CharService charService;
+	private WeaponService weaponService;
 	
 	@GetMapping
-	public List<Character> findAll(){
-		return charService.findAll();
+	public List<Weapon> findAll(){
+		return weaponService.findAll();
 	}
     
     @GetMapping("/{name}")
-    public Character findOne(@PathVariable String name) {
-       return charService.findOne(name);
+    public Weapon findOne(@PathVariable String name) {
+       return weaponService.findOne(name);
     }
   
   @PostMapping
-  public Map<String, String> insert(@RequestBody Character character){
-	 return charService.insert(character);
+  public Map<String, String> insert(@RequestBody Weapon weapon){
+	 return weaponService.insert(weapon);
     }
   
   @PutMapping
-  public Map<String,String> edit(@RequestBody Character character){
-	  return charService.edit(character);
+  public Map<String,String> edit(@RequestBody Weapon weapon){
+	  return weaponService.edit(weapon);
   }
   
   @DeleteMapping("/{name}")
   public Map<String,String> remove(@PathVariable String name){
-	  return charService.remove(name);
+	  return weaponService.remove(name);
    }
 }

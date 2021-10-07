@@ -4,9 +4,9 @@ public class Character {
 	
 	public String name;
 	public Type type;
-	public Game gameDebut;
+	public String gameDebut;
 	
-public Character(String name, Type type, Game gameDebut) {
+public Character(String name, Type type, String gameDebut) {
 		
 		this.name = name;
 		this.type = type;

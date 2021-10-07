@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import br.com.nikoaccampora.model.Game;
 
@@ -16,13 +18,11 @@ public class GameService {
 	    
 	    
 	    GameService(){
-	    	Game mm1;
-			GameList.add(
-	    	      mm1 = new Game("Mega Man","11")		
+	    	GameList.add(
+	    	         new Game("Mega Man","17/12/1987")
 	    	);
-			Game mm2;
-			GameList.add(
-	   	          mm2 = new Game("Mega Man 2","22")			
+	    	GameList.add(
+	   	         	 new Game("Mega Man 2","24/12/1988")
 	    	);
 	    }
 	    
@@ -30,49 +30,51 @@ public class GameService {
 		 return this.GameList;
 	 }
 	 
-	 public Game findOne(Game game) {
-		 for(Game obj_game : GameList) {
-	    	   if((game.toString()).equalsIgnoreCase(game.toString())) {
-	    		   return obj_game;
+	 public Game findOne(String title) {
+		 for(Game game : GameList) {
+	    	   if(game.title.equalsIgnoreCase(title)) {
+	    		   return game;
 	    	   }
 	       }
 	    return null;
 	 }
 	 
-	 public Map<String, String> insert(Character obj_game){
+	 public Map<String, String> insert(Game game){
 		 Map<String, String> result = new HashMap<String, String>();
-		  boolean isSuccess = GameList.add(obj_game);
+		  boolean isSuccess = GameList.add(game);
 		  if(isSuccess) {
-			  result.put("result", "Game added succuesfully!");
+			  result.put("result", "Game added successfully!");
 		  }else {
-			  result.put("result", "ERROR!! Game couldn't be added!");
+			  result.put("result", "ERROR!!! Could not be added!");
 		  }
 		  return result;	
 	 }	 
 	 
-	 public Map<String,String> edit(Character obj_game){
+	 public Map<String,String> edit(Game game){
 		  Map<String,String> result = new HashMap<String, String>();
 		  
 		  for(Game element : GameList) {
-	   	   if(element.title.equalsIgnoreCase(obj_game.title)) {
+	   	   if(element.title.equalsIgnoreCase(game.title)) {
 	   		   int index = GameList.indexOf(element);
-	   		   GameList.set(index, obj_game);
-	   		   result.put("result","Edit successful!");
+	   		   GameList.set(index, game);
+	   		   result.put("result", "Edit successful!");
 	   		   return result;
 	   	  }   
 	   	}
-		  result.put("result", "ERROR!! Could not edit!");
+		  result.put("result", "ERROR!!! Could not edit!");
 		  return result;
 
 	 }
 	 
-	 public Map<String,String> remove(Game game){
+	 public Map<String,String> remove(String title){
 		  Map<String,String> result = new HashMap<String, String>();
-		  boolean isSuccess = GameList.removeIf((element)->element.equals(character));
+		  boolean isSuccess = GameList.removeIf(
+				  (game)->game.title.equalsIgnoreCase(title)
+		  );
 		  if(isSuccess) {
-			  result.put("result", "Remove Successfully!");
+			  result.put("result", "Game removed.");
 		  } else {
-			  result.put("result", "ERROR: Could not be removed!");
+			  result.put("result", "ERROR!!! Could not remove!");
 		  }
 		  return result;
 	   }

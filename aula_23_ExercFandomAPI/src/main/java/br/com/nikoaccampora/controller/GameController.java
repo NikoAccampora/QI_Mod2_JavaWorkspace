@@ -16,38 +16,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.nikoaccampora.model.Character;
-import br.com.nikoaccampora.service.CharService;
+import br.com.nikoaccampora.model.Game;
+import br.com.nikoaccampora.service.GameService;
 
 @RestController
-@RequestMapping("/character")
-public class CharController    {
+@RequestMapping("/game")
+public class GameController    {
     
 	@Autowired
-	private CharService charService;
+	private GameService gameService;
 	
 	@GetMapping
-	public List<Character> findAll(){
-		return charService.findAll();
+	public List<Game> findAll(){
+		return gameService.findAll();
 	}
     
-    @GetMapping("/{name}")
-    public Character findOne(@PathVariable String name) {
-       return charService.findOne(name);
+    @GetMapping("/{title}")
+    public Game findOne(@PathVariable String title) {
+       return gameService.findOne(title);
     }
   
   @PostMapping
-  public Map<String, String> insert(@RequestBody Character character){
-	 return charService.insert(character);
+  public Map<String, String> insert(@RequestBody Game game){
+	 return gameService.insert(game);
     }
   
   @PutMapping
-  public Map<String,String> edit(@RequestBody Character character){
-	  return charService.edit(character);
+  public Map<String,String> edit(@RequestBody Game game){
+	  return gameService.edit(game);
   }
   
-  @DeleteMapping("/{name}")
-  public Map<String,String> remove(@PathVariable String name){
-	  return charService.remove(name);
+  @DeleteMapping("/{title}")
+  public Map<String,String> remove(@PathVariable String title){
+	  return gameService.remove(title);
    }
 }

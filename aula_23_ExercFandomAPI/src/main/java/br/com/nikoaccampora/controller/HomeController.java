@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
     @GetMapping
     public String index() {
-    	return "Bem vindo ao meu mundo! HAHAHAHA!!!";
+    	return "Welcome to my MegaAPI. Here's what you can find:\n\n - Characters\n - Games\n - Robot Masters\n - Weapons";
     }
 }
