@@ -16,38 +16,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.nikoaccampora.model.Person;
-import br.com.nikoaccampora.service.PersonService;
+import br.com.nikoaccampora.model.Character;
+import br.com.nikoaccampora.service.CharService;
 
 @RestController
 @RequestMapping("/person")
-public class PersonController    {
+public class CharController    {
     
 	@Autowired
-	private PersonService personService;
+	private CharService charService;
 	
 	@GetMapping
-	public List<Person> findAll(){
-		return personService.findAll();
+	public List<Character> findAll(){
+		return charService.findAll();
 	}
     
     @GetMapping("/{name}")
-    public Person findOne(@PathVariable String name) {
-       return personService.findOne(name);
+    public Character findOne(@PathVariable Character character) {
+       return charService.findOne(character);
     }
   
   @PostMapping
-  public Map<String, String> insert(@RequestBody Person person){
-	 return personService.insert(person);
+  public Map<String, String> insert(@RequestBody Character character){
+	 return charService.insert(character);
     }
   
   @PutMapping
-  public Map<String,String> edit(@RequestBody Person person){
-	  return personService.edit(person);
+  public Map<String,String> edit(@RequestBody Character character){
+	  return charService.edit(character);
   }
   
   @DeleteMapping("/{name}")
-  public Map<String,String> remove(@PathVariable String name){
-	  return personService.remove(name);
+  public Map<String,String> remove(@PathVariable Character character){
+	  return charService.remove(character);
    }
 }
