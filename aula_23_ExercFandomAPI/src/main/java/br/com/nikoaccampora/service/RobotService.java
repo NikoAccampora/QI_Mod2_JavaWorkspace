@@ -1,5 +1,6 @@
 package br.com.nikoaccampora.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -9,7 +10,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import br.com.nikoaccampora.model.Character;
+import br.com.nikoaccampora.model.Game;
 import br.com.nikoaccampora.model.RobotMaster;
+import br.com.nikoaccampora.model.Weapon;
+import br.com.nikoaccampora.service.WeaponService;
+import br.com.nikoaccampora.model.Character.Type;
+import br.com.nikoaccampora.model.Weapon.Element;
 
 @Service
 public class RobotService {
@@ -19,10 +26,18 @@ public class RobotService {
 	    
 	    RobotService(){
 	    	RobotList.add(
-	    	         new RobotMaster("Mega Man","Mega Man","DLN. 001","Dr. Light","Mega Buster","Spikes")		
+	    	         new RobotMaster(new Character("Mega Man",Type.Robot,new Game("Mega Man",LocalDate.of(1987,12,17))),
+	    	        		 "DLN. 001",
+	    	        		 new Character("Dr. Light",Type.Human,new Game("Mega Man",LocalDate.of(1987,12,17))),
+	    	        		 new Weapon("Mega Buster","Mega Man",Element.Buster),
+	    	        		 null)				
 	    	);
 	    	RobotList.add(
-	   	         	 new RobotMaster("Roll","Mega Man","DLN. 002","Dr. Light","Broomstick","Cockroaches")		
+	   	         	 new RobotMaster(new Character("Roll",Type.Robot,new Game("Mega Man",LocalDate.of(1987,12,17))),
+	    	        		 "DLN. 002",
+	    	        		 new Character("Dr. Light",Type.Human,new Game("Mega Man",LocalDate.of(1987,12,17))),
+	    	        		 null,
+	    	        		 null)		
 	    	);
 	    }
 	    
@@ -32,7 +47,7 @@ public class RobotService {
 	 
 	 public RobotMaster findOne(String name) {
 		 for(RobotMaster robotMaster : RobotList) {
-	    	   if(robotMaster.name.equalsIgnoreCase(name)) {
+	    	   if(robotMaster.character.name.equalsIgnoreCase(name)) {
 	    		   return robotMaster;
 	    	   }
 	       }
@@ -54,7 +69,7 @@ public class RobotService {
 		  Map<String,String> result = new HashMap<String, String>();
 		  
 		  for(RobotMaster element : RobotList) {
-	   	   if(element.name.equalsIgnoreCase(robotMaster.name)) {
+	   	   if(element.character.name.equalsIgnoreCase(robotMaster.character.name)) {
 	   		   int index = RobotList.indexOf(element);
 	   		   RobotList.set(index, robotMaster);
 	   		   result.put("result", "Edit successful!");
@@ -69,7 +84,7 @@ public class RobotService {
 	 public Map<String,String> remove(String name){
 		  Map<String,String> result = new HashMap<String, String>();
 		  boolean isSuccess = RobotList.removeIf(
-				  (robotMaster)->robotMaster.name.equalsIgnoreCase(name)
+				  (robotMaster)->robotMaster.character.name.equalsIgnoreCase(name)
 		  );
 		  if(isSuccess) {
 			  result.put("result", "Robot Master removed.");

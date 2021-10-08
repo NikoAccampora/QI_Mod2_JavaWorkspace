@@ -1,5 +1,6 @@
 package br.com.nikoaccampora.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,11 +19,12 @@ public class GameService {
 	    
 	    
 	    GameService(){
-	    	GameList.add(
-	    	         new Game("Mega Man","17/12/1987")
+			Game MM1;
+			GameList.add(
+	    	MM1 = new Game("Mega Man",LocalDate.of(1987,12,17))
 	    	);
-	    	GameList.add(
-	   	         	 new Game("Mega Man 2","24/12/1988")
+			GameList.add(
+	          new Game("Mega Man 2",LocalDate.of(1988,12,24))
 	    	);
 	    }
 	    

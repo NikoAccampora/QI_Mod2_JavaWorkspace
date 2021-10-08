@@ -1,5 +1,6 @@
 package br.com.nikoaccampora.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import br.com.nikoaccampora.model.Character;
 import br.com.nikoaccampora.model.Character.Type;
+import br.com.nikoaccampora.model.Game;
+import br.com.nikoaccampora.service.GameService;
 
 @Service
 public class CharService {
@@ -20,10 +23,13 @@ public class CharService {
 	    
 	    CharService(){
 	    	CharacterList.add(
-	    	         new Character("Mega Man",Type.Robot,"Mega Man")		
+	    	         new Character("Mega Man",Type.Robot,new Game("Mega Man",LocalDate.of(1987,12,17)))		
 	    	);
 	    	CharacterList.add(
-	   	         	 new Character("Dr. Light",Type.Human,"Mega Man")			
+	   	         	 new Character("Dr. Light",Type.Human,new Game("Mega Man",LocalDate.of(1987,12,17)))			
+	    	);
+	    	CharacterList.add(
+	   	         	 new Character("Roll",Type.Robot,new Game("Mega Man",LocalDate.of(1987,12,17)))			
 	    	);
 	    }
 	    

@@ -2,18 +2,16 @@ package br.com.nikoaccampora.model;
 
 public class RobotMaster {
 	
-	public String name;
-	public String gameDebut;
+	public Character character;
 	public String serialNumber;
-	public String creator;
-	public String weapon;
-	public String weakness;
+	public Character creator;
+	public Weapon weapon;
+	public Weapon weakness;
 	
-public RobotMaster(String name, String gameDebut, String serialNumber, String creator, String weapon, String weakness) {
+public RobotMaster(Character character, String serialNumber, Character creator, Weapon weapon, Weapon weakness) {
 		
-		this.name = name;
-		this.gameDebut = gameDebut;
-		this.serialNumber = serialNumber;
+	    this.character = character;
+	    this.serialNumber = serialNumber;
 		this.creator = creator;
 		this.weapon = weapon;
 		this.weakness = weakness;
