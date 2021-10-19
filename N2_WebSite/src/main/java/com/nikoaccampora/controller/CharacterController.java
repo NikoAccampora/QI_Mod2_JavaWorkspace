@@ -17,7 +17,7 @@ import com.nikoaccampora.model.Character;
 import com.nikoaccampora.service.CharacterService;
 
 @RestController
-@RequestMapping("/characters")
+@RequestMapping("/API/characters")
 public class CharacterController {
 	@Autowired
 	private CharacterService characterService;
